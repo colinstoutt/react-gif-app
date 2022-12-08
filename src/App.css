@@ -1,7 +1,23 @@
 body {
   font-family: sans-serif;
+  text-align: center;
 }
-
+input {
+  margin: 1.5rem;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  color: black;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 97, 94, 1) 0%,
+    rgba(251, 242, 80, 1) 25%,
+    rgba(0, 252, 151, 1) 50%,
+    rgba(26, 203, 253, 1) 75%,
+    rgba(147, 39, 247, 1) 100%
+  );
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 input:hover {
   cursor: pointer;
 }

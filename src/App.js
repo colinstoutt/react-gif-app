@@ -18,7 +18,6 @@ function App() {
   return (
     <div className="App">
       <Form getGif={getGif} />
-
       <DisplayGif gif={gifData} />
     </div>
   );
