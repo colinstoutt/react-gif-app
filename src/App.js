@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import DisplayGif from "./components/DisplayGif";
+import Form from "./components/Form";
 
 function App() {
+  const [gifData, setGifData] = useState({});
+
+  async function getGif() {
+    const randomGifUrl = `https://api.giphy.com/v1/gifs/random?api_key=5VwLe717cEywTonERcucCLb3t3y103Nt&tag=&rating=g`;
+    const res = await fetch(randomGifUrl);
+    const json = await res.json();
+    setGifData(json);
+  }
+
+  console.log(gifData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form getGif={getGif} />
+
+      <DisplayGif gif={gifData} />
     </div>
   );
 }
