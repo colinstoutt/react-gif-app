@@ -1,6 +1,6 @@
-export default function DisplayGif({ gif }) {
-  return gif.data ? (
-    <img src={gif.data.images.downsized.url} alt="" />
+export default function DisplayGif({ randomGif }) {
+  return randomGif.data ? (
+    <img src={randomGif.data.images.downsized.url} alt={randomGif.data.title} />
   ) : (
     <div></div>
   );
