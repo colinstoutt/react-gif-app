@@ -11,6 +11,7 @@ export default function Form({ getRandomGif, getSearchedGif }) {
   const handleSearch = (e) => {
     e.preventDefault();
     getSearchedGif(input);
+    setInput("");
   };
   return (
     <div className="forms">
